@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lighting Our Locals</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="logo">💡 Project LOL</div>
+
+    <nav>
+      <button onclick="showPage('homePage')">Home</button>
+      <button onclick="showPage('reportPage')">Report Issue</button>
+      <button onclick="showPage('reportsPage')">My Reports</button>
+      <button onclick="showPage('aboutPage')">About</button>
+      <button onclick="adminLogin()">Admin</button>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <section id="homePage" class="page">
+  <div class="hero upgraded-hero">
+    <div>
+      <p class="eyebrow">Community Safety Reporting Platform</p>
+      <h1>Lighting Our Locals</h1>
+      <p>
+        Project LOL helps residents document poorly lit areas, report streetlight concerns,
+        and support safer walking spaces throughout Bothell, Washington.
+      </p>
+
+      <div class="hero-buttons">
+        <button onclick="showPage('reportPage')">Report an Issue</button>
+        <button onclick="showPage('aboutPage')">Learn More</button>
+      </div>
+    </div>
+
+    <div class="hero-panel">
+      <h3>Project Features</h3>
+      <p>📷 Photo uploads</p>
+      <p>📍 Location reporting</p>
+      <p>⭐ Safety ratings</p>
+      <p>📋 Status tracking</p>
+      <p>👑 Admin review system</p>
+    </div>
+  </div>
+
+  <div class="home-grid">
+    <div class="info-card">
+      <h2>Report</h2>
+      <p>Residents can submit lighting concerns with photos, locations, safety levels, and descriptions.</p>
+    </div>
+
+    <div class="info-card">
+      <h2>Track</h2>
+      <p>Submitted reports can be viewed and tracked through status updates like Submitted, In Progress, and Resolved.</p>
+    </div>
+
+    <div class="info-card">
+      <h2>Improve</h2>
+      <p>The platform helps organize community concerns so lighting issues can be documented more clearly.</p>
+    </div>
+  </div>
+</section>
+
+    <section id="reportPage" class="page hidden">
+      <h1>Report an Issue</h1>
+
+      <div class="form-card">
+        <input id="location" placeholder="Location" />
+
+        <select id="issueType">
+          <option>Streetlight Not Working</option>
+          <option>Dim Light</option>
+          <option>No Streetlight</option>
+        </select>
+
+        <label>Safety Rating</label>
+        <select id="safetyLevel">
+          <option value="1">⭐</option>
+          <option value="2">⭐⭐</option>
+          <option value="3">⭐⭐⭐</option>
+          <option value="4">⭐⭐⭐⭐</option>
+          <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+
+        <textarea id="description" placeholder="Describe the issue"></textarea>
+
+        <label>Upload Image</label>
+        <input type="file" id="imageUpload" accept="image/*" />
+
+        <button onclick="submitReport()">Submit Report</button>
+      </div>
+    </section>
+
+    <section id="reportsPage" class="page hidden">
+      <h1>My Reports</h1>
+      <div id="reportContainer"></div>
+    </section>
+
+    <section id="detailsPage" class="page hidden">
+      <h1>Report Details</h1>
+      <div id="detailsContainer"></div>
+    </section>
+
+    <section id="aboutPage" class="page hidden">
+  <h1>About Project LOL</h1>
+
+  <div class="about-layout">
+    <div class="form-card">
+      <h2>What is Project LOL?</h2>
+      <p>
+        Project LOL, which stands for Lighting Our Locals, is a community problem-solving
+        project focused on inadequate street lighting in Bothell, Washington.
+        The project connects pedestrian safety, public awareness, and community reporting
+        to help identify areas where lighting concerns may affect residents.
+      </p>
+
+      <h2>The Problem</h2>
+      <p>
+        Poor lighting can make sidewalks, neighborhoods, parks, and walking paths feel
+        unsafe, especially during early morning and evening hours. Many pedestrians rely
+        on safe visibility when walking to school, exercising, commuting, or moving
+        through their community.
+      </p>
+
+      <h2>How the App Helps</h2>
+      <p>
+        This web platform allows users to report lighting issues by entering a location,
+        selecting an issue type, rating the safety concern, adding a description, and
+        uploading a photo. Reports can then be reviewed through an admin dashboard and
+        updated with a status.
+      </p>
+    </div>
+
+    <div class="form-card side-facts">
+      <h2>Key Project Evidence</h2>
+      <p><strong>41</strong> community survey responses collected.</p>
+      <p><strong>83%</strong> of respondents reported walking during early morning or evening hours.</p>
+      <p><strong>79%</strong> of pedestrian deaths occur at night.</p>
+      <p>
+        Project actions included surveys, outreach materials, city communication,
+        Customer Action Requests, and the development of this reporting tool.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <section id="adminPage" class="page hidden">
+      <h1>Admin Dashboard</h1>
+      <div id="adminStats"></div>
+      <div id="adminContainer"></div>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
